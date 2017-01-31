@@ -1,0 +1,21 @@
+development:
+  adapter:           postgresql
+  encoding:          unicode
+  database:          pyzlnar_dev
+  username:          USERNAME
+  password:          PASSWORD
+  host:              localhost
+  pool:              15
+  timeout:           5000
+  reaping_frecuency: 60
+
+test:
+  adapter:           postgresql
+  encoding:          unicode
+  database:          pyzlnar_test
+  username:          USERNAME
+  password:          PASSWORD
+  host:              localhost
+  pool:              15
+  timeout:           5000
+  reaping_frecuency: 60
