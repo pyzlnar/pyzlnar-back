@@ -11,12 +11,20 @@ gem 'pg'
 gem 'pry-rails'
 
 group :development do
+  # Deploy
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano3-puma'
+
+
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 # Testing
-group :development, :test do
+group :test do
   gem 'rspec-rails', '~> 3.5'
 end
