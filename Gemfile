@@ -18,7 +18,10 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano3-puma'
 
+  # Lint
+  gem 'rubocop', require: false
 
+  # Spring
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
