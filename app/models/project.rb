@@ -1,6 +1,18 @@
 # A Project contains information on one of the several (online) projects I've worked in.
 # Things like blogs, relevant programming exercises etc.
 class Project < ApplicationRecord
+  JSON_ATTRS = %i(
+    code
+    name
+    status
+    url
+    start_date
+    end_date
+    short
+    description
+    topics
+  ).freeze
+
   validates :name, :start_date, :short, :description,
             presence: true
 
@@ -15,4 +27,11 @@ class Project < ApplicationRecord
   validates :topics,
             presence: true,
             array: { may_include: Topic.topics }
+
+  # Converts the object as a json response
+  def as_json(*)
+    JSON_ATTRS.each_with_object({}) do |attribute, h|
+      h[attribute] = public_send(attribute)
+    end
+  end
 end
