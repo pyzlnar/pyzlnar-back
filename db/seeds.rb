@@ -11,10 +11,17 @@ seeds.each do |seed|
     puts "No '#{model.camelize}' class found"
   end
 
+  if model.any?
+    puts "#{model} has already been seeded, skipping..."
+    next
+  end
+
   begin
-    model.create!(attributes)
+    model.transaction{ model.create!(attributes) }
   rescue ActiveRecord::RecordInvalid => e
     puts "Could not create #{model}"
     puts e.message
   end
+  puts "#{model} seeded successfully!"
 end
+puts 'Success!'
