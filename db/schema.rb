@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170203052342) do
+ActiveRecord::Schema.define(version: 20170204171749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "code"
+    t.string   "name"
+    t.string   "status"
+    t.string   "url"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "short"
+    t.text     "description"
+    t.text     "topics",      default: [],              array: true
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["code"], name: "index_projects_on_code", using: :btree
+  end
 
   create_table "sites", force: :cascade do |t|
     t.string   "code"
