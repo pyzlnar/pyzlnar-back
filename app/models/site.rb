@@ -16,6 +16,13 @@ class Site < ApplicationRecord
             presence: true,
             array: { may_include: Topic.topics }
 
+  def self.cached(refresh: false)
+    Rails.cache.delete(:sites) if refresh
+    Rails.cache.fetch(:sites) do
+      Site.order(:status, :name).records
+    end
+  end
+
   # Converts the object as a json response
   def as_json(*)
     %i(code name status url description topics).each_with_object({}) do |attribute, h|

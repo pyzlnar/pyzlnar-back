@@ -6,6 +6,7 @@ ruby '2.4.0'
 gem 'rails', '~> 5.0.1'
 gem 'puma', '~> 3.0'
 gem 'pg'
+gem 'dalli'
 
 # Utilities
 gem 'pry-rails'

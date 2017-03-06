@@ -2,6 +2,6 @@
 class ProjectsController < ApplicationController
   # GET /api/projects
   def index
-    render json: Project.order(:name)
+    render json: Project.cached
   end
 end

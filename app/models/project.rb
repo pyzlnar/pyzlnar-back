@@ -28,6 +28,13 @@ class Project < ApplicationRecord
             presence: true,
             array: { may_include: Topic.topics }
 
+  def self.cached(refresh: false)
+    Rails.cache.delete(:projects) if refresh
+    Rails.cache.fetch(:projects) do
+      Project.order(:name).records
+    end
+  end
+
   # Converts the object as a json response
   def as_json(*)
     JSON_ATTRS.each_with_object({}) do |attribute, h|
