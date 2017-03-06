@@ -2,6 +2,6 @@
 class SitesController < ApplicationController
   # GET /api/sites
   def index
-    render json: Site.order(:status, :name)
+    render json: Site.cached
   end
 end
