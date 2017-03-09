@@ -75,3 +75,6 @@ pickle-email-*.html
 
 # vim artifacts
 **.swp
+
+# Adoc compiled
+README.html

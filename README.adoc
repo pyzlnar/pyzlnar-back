@@ -1,3 +1,177 @@
-== Pyzlnar Back
+// Asciidoctor Source
+// Pyzlnar Back README
+//
+// Original author:
+// - Pyzlnar
+//
+// Notes:
+//  Compile with: $ asciidoctor README.adoc
 
-Back end for pyzlnar.com
+= Pyzlnar Back
+[Back end for pyzlnar.com]
+:toc:
+:showtitle:
+
+== Introduction
+
+This is the back end repo for link:https://pyzlnar.com[pyzlnar.com] +
+The backend is running on a Rails app (API mode) with PSQL.
+
+Nothing too fancy to be honest, and maybe even a bit lackluster considering I'm
+supposed to be a backend guy, but tool for the job, so I guess this does for my
+small API for now. :)
+
+== Installation
+
+=== Requirements
+
+You will need the following installed to be able to run the back end:
+
+* git +
+  Should go without saying. Get yourself git
+  link:https://git-scm.com/book/en/v2/Getting-Started-Installing-Git[installed].
+* ruby 2.4.0 +
+  I kind of regret not using 2.3.X because all the frozen string warnings. I
+  recommend you install it via link:https://rvm.io/rvm/install[rvm] or
+  link:https://github.com/rbenv/rbenv#installation[rbenv].
+* PostgreSQL 9.6.1 +
+  Always a nightmare to setup, but it's amazing to use. General instructions can
+  be found link:https://www.postgresql.org/download/[here].
+* Memcached (Optional) +
+  User for simple caching, but won't have that much of an effect if you don't
+  install it other than slower responses. Install instructions can be found
+  link:https://github.com/memcached/memcached/wiki/Install[here]. +
+
+=== Source Code
+
+Clone the repo into your machine, and then change to the directory before you
+run anything else.
+
+[source, bash]
+----
+# Create a root directory first if you haven't already.
+# The directory structure is not needed, but I like working this way.
+$ mkdir pyzlnar
+
+# Clone the repo into front
+$ git clone git@github.com:pyzlnar/pyzlnar-back.git pyzlnar/back
+
+# Change to back directory
+$ cd pyzlnar/back
+----
+
+With the front repo, directories will look like this.
+
+[source, bash]
+----
+$ tree pyzlnar/ -L 1
+pyzlnar/
+├── back
+└── front
+----
+
+=== Dependencies
+
+Now to install all the dependencies. First you need to install bundler(v1.14.3+)
+
+[source,bash]
+----
+$ gem install bundler
+----
+
+After that, you simply need to install with bundler!
+
+[source,bash]
+----
+$ bundle install
+
+# Or simply
+$ bundle
+----
+
+You might find yourself that the `pg` gem is being uncooperative. If that's the
+case follow the output instructions or google around on how to correctly setup
+the gem and retry until you've succesfuly installed all the gems.
+
+The project uses `rails 5.0.1` as of right now in case you're wondering.
+
+=== Initial Setup
+
+Copy the secrets example into the actual secrets files. Edit the new file
+`secrets.yml` with your own secrets if needed to.
+
+[source,bash]
+----
+$ cp config/secrets.example.yml config/secrets.yml
+----
+
+Copy the database example into the actual database files. Edit the new file
+`database.yml` with your own database configuration.
+
+[source,bash]
+----
+$ cp config/database.example.yml config/database.yml
+----
+
+Create, migrate and seed the database.
+
+[source,bash]
+----
+$ rake db:setup
+----
+
+If you find yourself with problems creating the database (lol postgres), the
+most common errors are not having the correct username/password in the database
+config file (`config/database.yml`), not setting the postgres role correctly,
+and not setting up the correct database template.
+
+== Running
+
+After all that one time setup, running is actually fairly easy!
+
+[source,bash]
+----
+# This will run the server in localhost:3000
+$ rails s
+----
+
+NOTE: If you didn't install memcached, consider commenting out the `cache_store`
+setting in `config/environments/development.rb` before running the server.
+
+== Code Integrity
+
+=== Tests
+
+Truth to be told running the tests is very easy, but since I'm using ruby
+`2.4.0`, a lot of deprecation warning appear before the tests and it's quite
+annoying. To supress those warnings, run the tests like this:
+
+[source,bash]
+----
+$ RUBYOPT="-W0" rspec spec/
+----
+
+=== Lint
+
+I use rubocop to eliminate any smells from the code. To run it just use:
+
+[source,bash]
+----
+$ rubocop
+----
+
+== TODO
+
+image:https://i1.wp.com/pyzlnar.files.wordpress.com/2012/06/todo.jpg[Todo,200]
+
+Small list of features that may be coming in the future.
+
+* Auth & Auth
+* Missing CRUD actions for resources
+* Use message pack instead of json
+* Use a docker image for ease of installation
+
+== License
+
+Pyzlnar back is released under the
+https://opensource.org/licenses/MIT[MIT License].
