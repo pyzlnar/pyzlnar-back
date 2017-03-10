@@ -4,9 +4,9 @@ sites:
     status: active
     url:    https://pyzlnar.wordpress.com
     description: >
-      One of my first blogs, but at least the oldest that still somehow survives.
+      It may not be my first blog, but it is the oldest one that still somehow survives.
       Been an casual blogger since 2009. While I just really write every so often I hope to change
-      that tendency relatively soon. Always happy to write some more.
+      that tendency soon. Writing always makes me happy after all.
     topics:
       - personal
 
@@ -16,8 +16,8 @@ sites:
     url:    https://github.com/pyzlnar
     description: >
       Contains personal programming projects. Every now and then I feel the need to learn a new
-      technology or just to code something that seems fun to do. While that not always ends up
-      actually being created, when it does the source code will most likely end up here. That's
+      technology or just to code something that seems fun. While not all ideas end up
+      actually being created, when they do the source code will most likely end up here. That's
       a bit sad considering there's not that much in there. Oh well.
     topics:
       - programming
@@ -27,28 +27,28 @@ sites:
     status: active
     url:    https://twitter.com/Pyzlnar
     description: >
-      A couple of years ago you could read very often that miniblogging killed blogging. They kinda
-      are right. Do not expect sanity in my twitter account; in fact expect a lot of anime girls or
-      similar.
+      A couple of years ago you could read very often that miniblogging killed blogging. I guess
+      those statements were right for the most part. Do not expect sanity in my twitter account;
+      in fact expect a lot of anime girls, cyriak and similar.
     topics:
       - personal
 
   - code:   steam
     name:   Steam
     status: active
-    url:    http://steamcommunity.com/id/Pyzlnar
+    url:    https://steamcommunity.com/id/Pyzlnar
     description: >
       While I take pride on the quantity of anime I've seen I cannot deny that most of my free time
       actually goes to gaming instead. Steam is probably a part of about every PC gamer nowadays so
       if you feel like it you can hang over my profile. If you want to add me let me know first
-      though, I normally ignore friend requests since I assume they're just bots.
+      though, I normally ignore friend requests since I assume they're just bots or scammers.
     topics:
       - gaming
 
   - code:   animeplanet
     name:   Anime-Planet
     status: active
-    url:    http://www.anime-planet.com/users/Pyzlnar
+    url:    https://www.anime-planet.com/users/Pyzlnar
     description: >
       Why not MyAnimeList? Well I heard about Anime-Planet first... also I like their UI way better.
       You can see here the insane quantity of anime I've seen over the years, and when I say insane
@@ -59,18 +59,18 @@ sites:
   - code:   crunchyroll
     name:   Crunchyroll
     status: active
-    url:    http://www.crunchyroll.com/user/pyzlnar
+    url:    https://www.crunchyroll.com/user/pyzlnar
     description: >
       Back when I was a student I used to watch all of my anime via illegal stream sites. There was
-      no alternative after all. Crunchyroll is my preferred streaming site and yes I do have a
-      subscription there, and yes I pretty much just do it to support the industry in the west.
+      no alternative after all. Nowadays Crunchyroll is my preferred streaming site and I do have a
+      premium subscription there, so I guess that's that.
     topics:
       - anime
 
   - code:   lastfm
     name:   Last.fm
     status: inactive
-    url:    http://www.last.fm/user/pyzlnar
+    url:    https://www.last.fm/user/pyzlnar
     description:
       Yeah... This was a thing I used... a bit. Back in highschool I had several friends that used
       it so I eventually ended up with an account. I do like music but definitely not on the same
@@ -82,12 +82,12 @@ sites:
   - code:   newgrounds
     name:   Newgrounds
     status: inactive
-    url:    http://pyzlnar.newgrounds.com
+    url:    https://pyzlnar.newgrounds.com
     description:
       Ah man, newgrounds. Back when I had no money to buy games but I still loved playing them I
       used to frequent this site a lot. While flash games don't have the best reputation nowadays I
       can still recall several that I just loved to dead. Spewer, No time to explain, Dead dice
-      overdose, Kitten cnon just to name some. Definitely my origins as a PC gamer can be found
+      overdose, Kitten cannon just to name some. Definitely my origins as a PC gamer can be found
       here.
     topics:
       - gaming
@@ -110,7 +110,7 @@ sites:
     url:    https://www.flickr.com/photos/pyzlnar
     description:
       I like taking photos. I have absolutely no idea of the theory behind it, nor do I feel I have
-      enough interest to take the time to learn it. When I see a panorama I like I take a picture
-      and you're gonna see a lot of those in here.
+      enough interest to take the time to learn it. When I see an opportunity for what I think will
+      be a good picture I go for it and that's about it. You're gonna see a lot of those in here.
     topics:
       - personal
