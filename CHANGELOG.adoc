@@ -10,6 +10,6 @@
 = Changelog
 
 == v1.0.0
-2017-03-11
+2017-03-10
 
 - :confetti_ball: Initial Release!
