@@ -54,7 +54,7 @@ run anything else.
 $ mkdir pyzlnar
 
 # Clone the repo into front
-$ git clone git@github.com:pyzlnar/pyzlnar-back.git pyzlnar/back
+$ git clone https://github.com/pyzlnar/pyzlnar-back.git pyzlnar/back
 
 # Change to back directory
 $ cd pyzlnar/back
