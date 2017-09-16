@@ -10,7 +10,7 @@ class Site < ApplicationRecord
 
   validates :status,
             presence:  true,
-            inclusion: { in: %w(active inactive) }
+            inclusion: { in: %w[active inactive] }
 
   validates :topics,
             presence: true,
@@ -25,7 +25,7 @@ class Site < ApplicationRecord
 
   # Converts the object as a json response
   def as_json(*)
-    %i(code name status url description topics).each_with_object({}) do |attribute, h|
+    %i[code name status url description topics].each_with_object({}) do |attribute, h|
       h[attribute] = public_send(attribute)
     end
   end

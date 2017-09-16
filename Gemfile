@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-ruby '2.4.0'
+ruby '2.4.2'
 
 # Platform / System Gems
-gem 'rails', '~> 5.0.1'
-gem 'puma', '~> 3.0'
-gem 'pg'
 gem 'dalli'
+gem 'pg'
+gem 'puma', '~> 3.0'
+gem 'rails', '~> 5.1.4'
 
 # Utilities
 gem 'pry-rails'
@@ -30,6 +30,6 @@ end
 
 # Testing
 group :test do
-  gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl'
+  gem 'rspec-rails', '~> 3.5'
 end
