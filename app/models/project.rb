@@ -1,7 +1,7 @@
 # A Project contains information on one of the several (online) projects I've worked in.
 # Things like blogs, relevant programming exercises etc.
 class Project < ApplicationRecord
-  JSON_ATTRS = %i(
+  JSON_ATTRS = %i[
     code
     name
     status
@@ -11,7 +11,7 @@ class Project < ApplicationRecord
     short
     description
     topics
-  ).freeze
+  ].freeze
 
   validates :name, :start_date, :short, :description,
             presence: true
@@ -22,7 +22,7 @@ class Project < ApplicationRecord
 
   validates :status,
             presence:  true,
-            inclusion: { in: %w(active stalled dead) }
+            inclusion: { in: %w[active stalled dead] }
 
   validates :topics,
             presence: true,

@@ -3,6 +3,8 @@ Metrics/LineLength:
 
 AllCops:
   Include:
+    - '**/Gemfile'
+    - '**/Capfile'
     - '**/Rakefile'
     - '**/config.ru'
   Exclude:
