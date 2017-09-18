@@ -8,7 +8,11 @@ gem 'pg'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.1.4'
 
+# Auth
+gem 'google-id-token'
+
 # Utilities
+gem 'aye_commander'
 gem 'pry-rails'
 
 group :development do
