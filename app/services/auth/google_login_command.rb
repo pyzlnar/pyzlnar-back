@@ -3,7 +3,7 @@
 # 2. Validates the token is authentic and has not expired
 # 3. Parses the token into a hash
 # 4. Finds or creates a new user with said info
-class GoogleLoginCommand
+class Auth::GoogleLoginCommand
   include AyeCommander::Command
 
   APP_ID = Rails.application.secrets.dig(:omniauth, :id).freeze
@@ -45,7 +45,7 @@ class GoogleLoginCommand
   def verify_email
     return if payload[:email_verified]
     @error = 'Email has not been verified!'
-    fail!(:unverifired_email) && abort!
+    fail!(:unverified_email) && abort!
   end
 
   def arrange_data

@@ -7,14 +7,17 @@ class AuthController < ApplicationController
       return
     end
 
-    result = GoogleLoginCommand.call(token: token)
+    result = Auth::GoogleLoginCommand.call(token: token)
     if result.success?
+      sign_in(result.user)
+      render status: 201, json: result.user
     else
       render status: 401
     end
   end
 
-  # POST /api/auth/logout
+  # DELETE /api/auth/logout
   def logout
+    sign_out
   end
 end

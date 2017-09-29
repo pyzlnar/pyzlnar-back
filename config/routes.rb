@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       delete :logout
     end
 
+    resource  :me, controller: :me, only: %i[show update]
     resources :projects, only: :index
     resources :sites,    only: :index
   end
