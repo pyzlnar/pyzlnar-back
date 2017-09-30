@@ -29,5 +29,15 @@ module Pyzlnar
 
     # Auto load folders
     config.autoload_paths << Rails.root.join(*%w[app validators])
+
+    # Reenable cookies for session
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore,
+      key:        :token,
+      httponly:   false,
+      secure:     true,
+      encrypted:  true,
+      expires_in: 1.day
+
   end
 end

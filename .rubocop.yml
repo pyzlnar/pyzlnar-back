@@ -1,7 +1,5 @@
-Metrics/LineLength:
-  Max: 100
-
 AllCops:
+  TargetRubyVersion: 2.4.2
   Include:
     - '**/Gemfile'
     - '**/Capfile'
@@ -13,3 +11,15 @@ AllCops:
     - 'config/**/*'
     - 'spec/**/*'
     - 'vendor/**/*'
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/LineLength:
+  Max: 100
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
