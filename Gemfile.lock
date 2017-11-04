@@ -42,7 +42,7 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     arel (8.0.0)
     ast (2.3.0)
-    aye_commander (1.0.2)
+    aye_commander (1.1.0)
     builder (3.2.3)
     capistrano (3.9.1)
       airbrussh (>= 1.0.0)
