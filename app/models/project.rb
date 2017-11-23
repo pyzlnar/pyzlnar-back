@@ -28,6 +28,8 @@ class Project < ApplicationRecord
             presence: true,
             array: { may_include: Topic.topics }
 
+  after_save :refresh_cache
+
   def self.cached(refresh: false)
     Rails.cache.delete(:projects) if refresh
     Rails.cache.fetch(:projects) do
@@ -40,5 +42,11 @@ class Project < ApplicationRecord
     JSON_ATTRS.each_with_object({}) do |attribute, h|
       h[attribute] = public_send(attribute)
     end
+  end
+
+  private
+
+  def refresh_cache
+    self.class.cached(refresh: true)
   end
 end
