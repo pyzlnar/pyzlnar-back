@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 
     resource  :me, controller: :me, only: %i[show update]
     resources :projects, except: :show
-    resources :sites,    only: :index
+    resources :sites,    except: :show
   end
 end
