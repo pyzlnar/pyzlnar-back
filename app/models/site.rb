@@ -16,6 +16,8 @@ class Site < ApplicationRecord
             presence: true,
             array: { may_include: Topic.topics }
 
+  after_save -> { self.class.cached(refresh: true) }
+
   def self.cached(refresh: false)
     Rails.cache.delete(:sites) if refresh
     Rails.cache.fetch(:sites) do
