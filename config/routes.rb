@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
 
     resource  :me, controller: :me, only: %i[show update]
-    resources :projects, only: :index
+    resources :projects, except: :show
     resources :sites,    only: :index
   end
 end
