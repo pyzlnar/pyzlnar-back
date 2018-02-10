@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
     if @project.save
       render status: 201, json: @project
     else
-      render status: 422, json: @project.errors
+      render status: 422, json: { project: @project.errors }
     end
   end
 
@@ -23,7 +23,7 @@ class ProjectsController < ApplicationController
     if @project.update(project_params)
       render status: 200, json: @project
     else
-      render status: 422, json: @project.errors
+      render status: 422, json: { project: @project.errors }
     end
   end
 

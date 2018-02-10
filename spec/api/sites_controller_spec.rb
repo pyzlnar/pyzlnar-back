@@ -33,10 +33,11 @@ describe SitesController do
       site = build(:site, code: nil)
       post '/api/sites', params: { site: site.as_json }
       site.valid?
+      expected = { site: site.errors }.to_json
 
       expect(status).to eq 422
       expect(Site.count).to eq 0
-      expect(body).to eq site.errors.to_json
+      expect(body).to eq expected
     end
   end
 
