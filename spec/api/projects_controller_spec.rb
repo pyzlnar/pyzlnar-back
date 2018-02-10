@@ -44,10 +44,11 @@ describe ProjectsController do
       project = build(:project, code: nil)
       post '/api/projects', params: { project: project.as_json }
       project.valid?
+      expected = { project: project.errors }.to_json
 
       expect(status).to eq 422
       expect(Project.count).to eq 0
-      expect(body).to eq project.errors.to_json
+      expect(body).to eq expected
     end
   end
 

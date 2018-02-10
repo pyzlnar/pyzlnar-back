@@ -14,7 +14,7 @@ class SitesController < ApplicationController
     if @site.save
       render status: 201, json: @site
     else
-      render status: 422, json: @site.errors
+      render status: 422, json: { site: @site.errors }
     end
   end
 
@@ -23,7 +23,7 @@ class SitesController < ApplicationController
     if @site.update(site_params)
       render status: 200, json: @site
     else
-      render status: 422, json: @site.errors
+      render status: 422, json: { site: @site.errors }
     end
   end
 

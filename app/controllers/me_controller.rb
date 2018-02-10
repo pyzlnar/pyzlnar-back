@@ -12,7 +12,7 @@ class MeController < ApplicationController
     if current_user.update(user_params)
       render json: current_user
     else
-      render status: 422, json: current_user.errors
+      render status: 422, json: { user: current_user.errors }
     end
   end
 
