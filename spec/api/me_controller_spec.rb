@@ -40,7 +40,7 @@ describe MeController do
       sign_in(user)
       create(:admin)
 
-      expected = { user: { username: ['has already been taken'] } }.to_json
+      expected = { user: { username: ['Has already been taken'] } }.to_json
       params   = { user: { username: 'admin' } }
       patch '/api/me', params: params
 
