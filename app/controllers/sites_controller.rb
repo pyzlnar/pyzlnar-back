@@ -2,6 +2,7 @@
 class SitesController < ApplicationController
   before_action :authenticate_user!, :authorize_user!, except: :index
   before_action :set_site, only: %i[update destroy]
+  after_action :refresh_cache, only: %i[create update destroy]
 
   # GET /api/sites
   def index
@@ -49,5 +50,9 @@ class SitesController < ApplicationController
       :description,
       topics: []
     )
+  end
+
+  def refresh_cache
+    Site.cached(refresh: true) if response.status.in? 200...300
   end
 end

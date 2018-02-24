@@ -2,6 +2,7 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!, :authorize_user!, except: :index
   before_action :set_project, only: %i[update destroy]
+  after_action :refresh_cache, only: %i[create update destroy]
 
   # GET /api/projects
   def index
@@ -52,5 +53,9 @@ class ProjectsController < ApplicationController
       :description,
       topics: []
     )
+  end
+
+  def refresh_cache
+    Project.cached(refresh: true) if response.status.in? 200...300
   end
 end
