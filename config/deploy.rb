@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.7.2'
+lock '3.9.1'
 
 # Load config
 set :config, YAML.load_file('config/secrets.yml')['capistrano']
@@ -12,6 +12,9 @@ set :front_path, fetch(:config)['paths']['front']
 set :format, :pretty
 set :keep_releases, 2
 set :pty,   true
+
+# RVM
+set :rvm_ruby_version, '2.4.2'
 
 # Puma
 # To update these settings, run puma:config to rewrite the shared/puma.rb file
