@@ -30,15 +30,14 @@ You will need the following installed to be able to run the back end:
 * git +
   Should go without saying. Get yourself git
   link:https://git-scm.com/book/en/v2/Getting-Started-Installing-Git[installed].
-* ruby 2.4.0 +
-  I kind of regret not using 2.3.X because all the frozen string warnings. I
-  recommend you install it via link:https://rvm.io/rvm/install[rvm] or
+* ruby 2.4.2 +
+  I recommend you install it via link:https://rvm.io/rvm/install[rvm] or
   link:https://github.com/rbenv/rbenv#installation[rbenv].
 * PostgreSQL 9.6.1 +
   Always a nightmare to setup, but it's amazing to use. General instructions can
   be found link:https://www.postgresql.org/download/[here].
 * Memcached (Optional) +
-  User for simple caching, but won't have that much of an effect if you don't
+  Used for simple caching, but won't have that much of an effect if you don't
   install it other than slower responses. Install instructions can be found
   link:https://github.com/memcached/memcached/wiki/Install[here]. +
 
@@ -93,7 +92,7 @@ You might find yourself that the `pg` gem is being uncooperative. If that's the
 case follow the output instructions or google around on how to correctly setup
 the gem and retry until you've succesfuly installed all the gems.
 
-The project uses `rails 5.0.1` as of right now in case you're wondering.
+The project uses `rails 5.1.4` as of right now in case you're wondering.
 
 === Initial Setup
 
@@ -142,13 +141,11 @@ setting in `config/environments/development.rb` before running the server.
 
 === Tests
 
-Truth to be told running the tests is very easy, but since I'm using ruby
-`2.4.0`, a lot of deprecation warning appear before the tests and it's quite
-annoying. To supress those warnings, run the tests like this:
+Truth to be told running the tests is very easy! Just run the tests like this:
 
 [source,bash]
 ----
-$ RUBYOPT="-W0" rspec spec/
+$ rspec spec/
 ----
 
 === Lint
@@ -166,9 +163,7 @@ image:https://i1.wp.com/pyzlnar.files.wordpress.com/2012/06/todo.jpg[Todo,200]
 
 Small list of features that may be coming in the future.
 
-* Auth & Auth
-* Missing CRUD actions for resources
-* Use message pack instead of json
+* Forever upgrading ruby and rails versions
 * Use a docker image for ease of installation
 
 == License
