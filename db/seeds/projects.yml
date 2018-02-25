@@ -108,3 +108,20 @@ projects:
     topics:
       - personal
       - programming
+
+  - code:        animeplanet
+    name:        Anime-Planet developer
+    status:      active
+    url:         https://www.anime-planet.com/about
+    start_date:  2017-08-28
+    end_date:    ~
+    short:       Developer at Anime-Planet.
+    description: >
+      Who would have guessed that after almost ten years of using Anime-Planet a series of random
+      events would lead to me being invited as being a developer for the site? Hah.
+      Not sure what else needs to be said, I am truly grateful and happy for the opportunity and I
+      do my best to help out a site that I really like. Yeah, even if it built in a programming
+      language that I personally dislike.
+    topics:
+      - anime
+      - programming

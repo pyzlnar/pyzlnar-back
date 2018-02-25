@@ -10,11 +10,13 @@ class Site < ApplicationRecord
 
   validates :status,
             presence:  true,
-            inclusion: { in: %w(active inactive) }
+            inclusion: { in: %w[active inactive] }
 
   validates :topics,
             presence: true,
             array: { may_include: Topic.topics }
+
+  after_save -> { self.class.cached(refresh: true) }
 
   def self.cached(refresh: false)
     Rails.cache.delete(:sites) if refresh
@@ -25,7 +27,7 @@ class Site < ApplicationRecord
 
   # Converts the object as a json response
   def as_json(*)
-    %i(code name status url description topics).each_with_object({}) do |attribute, h|
+    %i[code name status url description topics].each_with_object({}) do |attribute, h|
       h[attribute] = public_send(attribute)
     end
   end

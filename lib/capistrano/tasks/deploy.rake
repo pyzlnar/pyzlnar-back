@@ -22,5 +22,5 @@ namespace :deploy do
     end
   end
 
-  after  :finishing, :cleanup
+  after :finishing, :cleanup
 end

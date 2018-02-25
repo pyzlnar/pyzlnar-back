@@ -5,12 +5,12 @@
 # plug in to several models it just feels more efficient to have it like this.
 # At least for now.
 module Topic
-  TOPICS = %i(
+  TOPICS = %i[
     anime
     gaming
     programming
     personal
-  ).freeze
+  ].freeze
 
   # Returns the available topics as strings
   def self.topics
