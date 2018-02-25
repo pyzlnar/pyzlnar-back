@@ -10,11 +10,14 @@ describe AuthController do
 
       expect(Auth::GoogleLoginCommand).to receive(:call).with(token: 'token').and_return(login)
       expect_any_instance_of(controller).to receive(:sign_in).with(user)
+      expect_any_instance_of(controller).to receive(:form_authenticity_token).and_return(:csrf_token)
 
       post '/api/auth/login', params: { google: { id_token: :token } }
 
+      expected = { user: user, token: :csrf_token }.to_json
+
       expect(status).to eq 201
-      expect(body).to eq user.to_json
+      expect(body).to eq expected
     end
 
     it 'returns 422 if missing the needed parameters to login' do
