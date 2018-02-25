@@ -9,6 +9,17 @@
 
 = Changelog
 
+== v1.1.0
+2018-02-24
+
+- :wrench: Ruby 2.4.2 upgrade
+- :wrench: Rails 5.1.4 upgrade
+- :green_book: Added Anime-Planet to project seeds
+- :sparkles: Added Gmail Oauth login
+- :sparkles: Added MeController (show update)
+- :sparkles: Added Projects endpoints (create update delete)
+- :sparkles: Added Sites endpoints (create update delete)
+
 == v1.0.1
 2017-04-09
 
